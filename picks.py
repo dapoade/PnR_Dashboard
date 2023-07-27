@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np 
 
-# import matplotlib.pyplot as plt
-import seaborn as sns
+import matplotlib.pyplot as plt
+
 
 
 
@@ -93,23 +93,6 @@ def get_versatile_defenders(df: df = big_defenders, season : str = 'RS'):
 
 
 
-# defenders = get_versatile_defenders(big_defenders, 'PO')
-
-
-# plot defender versatility vs ppda allowed 
-def plot_defenders(df: df):
-
-    x = df['versatility']
-    y = df['PPDA']
-
-    ax = sns.regplot(x = x, y =  y, scatter_kws={"color": "black"}, line_kws={"color": "red"}, ci = None )
-    ax.set(xlabel = 'Versatility Rating by Player', ylabel= 'Points per Direct Attempt Allowed', title= f"Player Versatility vs Effectiveness -- {df['SeasonType'].iloc[0]} ")
-    
-    return ax
-
-
-# plot_defenders(defenders)
-
 
 # calculate  versatility rating by team
 def get_versatile_teams(df: df = big_defenders, season: str = 'RS'):
@@ -154,20 +137,6 @@ def get_versatile_teams(df: df = big_defenders, season: str = 'RS'):
 
 
 
-# teams = get_versatile_teams(big_defenders, 'PO')
-
-# plot team versatility vs ppda allowed 
-def plot_teams(df: df):
-
-    x = df['versatility']
-    y = df['PPDA']
-
-    ax = sns.regplot(x = x, y =  y, scatter_kws={"color": "black"}, line_kws={"color": "red"}, ci = None )
-    ax.set(xlabel = 'Versatility Rating by Team', ylabel= 'Points per Direct Attempt Allowed', title= f"Team Versatility vs Effectiveness -- {df['SeasonType'].iloc[0]}")
-
-    return ax 
-
-# plot_teams(teams)
 
 
 
@@ -204,21 +173,7 @@ def get_game_versatility(df: df = big_defenders, season: str = 'RS'):
 
     return final_df
 
-# game_versatility = get_game_versatility(big_defenders, 'RS')
 
-# plot versatility by team per game vs ppda allowed
-
-def plot_game_versatility(df: df):
-
-    x = df['versatility']
-    y = df['PPDA']
-
-    ax = sns.regplot(x = x, y = y, scatter_kws={"color": "black"}, line_kws={"color": "red"} )
-    ax.set(xlabel = 'Versatility Rating by Game', ylabel= 'Points per Direct Attempt Allowed', title= f"Versatility vs Effectiveness -- {df['SeasonType'].iloc[0]} ")
-
-    return ax 
-
-# plot_game_versatility(game_versatility)
 
 
 def coverage_by_quarter(df: df = big_defenders, season : str = 'RS'):

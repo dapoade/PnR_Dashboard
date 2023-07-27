@@ -1,8 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-
-
+import matplotlib.pyplot as plt
 
 from picks import coverage_by_quarter, get_game_versatility, get_versatile_teams, get_versatile_defenders, league_wide_coverages, player_team_coverages, team_coverages, bigs 
 # import z_picks
