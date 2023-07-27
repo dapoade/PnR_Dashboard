@@ -1,10 +1,7 @@
 import pandas as pd
 import numpy as np 
 
-import matplotlib.pyplot as plt
-
-
-
+# import matplotlib.pyplot as plt
 
 df = pd.read_csv("z_Picks_22_23.csv")
 
@@ -92,8 +89,6 @@ def get_versatile_defenders(df: df = big_defenders, season : str = 'RS'):
     return defenders
 
 
-
-
 # calculate  versatility rating by team
 def get_versatile_teams(df: df = big_defenders, season: str = 'RS'):
     """
@@ -134,10 +129,6 @@ def get_versatile_teams(df: df = big_defenders, season: str = 'RS'):
     teams['vers_Rk'] = round(teams['versatility'].rank(ascending = False, method = 'min'), 0).astype('int')
 
     return teams 
-
-
-
-
 
 
 # get versatility by team per game 
