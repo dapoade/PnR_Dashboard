@@ -200,6 +200,7 @@ elif selection == 'Team Page':
     page_two()
 
 st.sidebar.caption(" *All pick and roll information is calculated using direct pick and rolls*")
+st.sidebar.caption("* Versatility Rating is a measure of how many different coverages a player or team plays. Metric based on tendency, not effectiveness, with 1 being more versatile and 0 being the least versatile.*")
 
 
 
