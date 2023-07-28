@@ -126,7 +126,7 @@ def page_two():
     st.title(f'{nba_teams[selected_team]} Team Page')
 
 
-    st.header("Pick and Roll Coverages by Player")
+    
 
     selected_season = st.radio("Select Season:", ('Regular Season', 'Playoffs'))
 
@@ -156,6 +156,8 @@ def page_two():
                                             (coverage_by_team['CoverageType_SCR_D'].str.contains(coverage_type_search_query, case=False))
                                             ]
         coverage_by_team = coverage_by_team.style.background_gradient(subset = 'PPDA Allowed', cmap= 'RdYlGn_r')
+
+        st.header("Pick and Roll Coverages by Player")
         st.dataframe(coverage_by_team, hide_index = True, column_config = {'Player_SCR_D': 'Def. Player',
                                                         'CoverageType_SCR_D' : 'Coverage'})
         
@@ -186,6 +188,8 @@ def page_two():
                                             (coverage_by_team['CoverageType_SCR_D'].str.contains(coverage_type_search_query, case=False))
                                             ]
         coverage_by_team = coverage_by_team.style.background_gradient(subset = 'PPDA Allowed', cmap= 'RdYlGn_r').format(precision = 3)
+
+        st.header("Pick and Roll Coverages by Player")
         st.dataframe(coverage_by_team, hide_index = True, column_config = {'Player_SCR_D': 'Def. Player',
                                                         'CoverageType_SCR_D' : 'Coverage'})
         
